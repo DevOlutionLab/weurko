@@ -1,0 +1,121 @@
+<ion-content fullscreen>
+
+  <ion-button (click)="start()" fill="clear">
+    PASSER
+  </ion-button>
+
+  <ion-slides pager="true">
+    <!-- Slide 1 -->
+    <ion-slide>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-text>
+            <h1 class="welcome-txt">
+              Bienvenue sur <br />
+              <span>Weurko</span>
+            </h1>
+            <img src="./assets/welcome.png" />
+          </ion-text>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-button (click)="next()" fill="clear" color="primary">
+            <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+            SUIVANT
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <!-- Slide 2 -->
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-text>
+            <img src="./assets/slider/address-illustration.jpg" />
+            <h1 class="ion-padding">
+              Trouvez les adresses et contacts des entreprises au Sénégal.
+            </h1>
+          </ion-text>
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-padding">
+          <ion-buttons>
+            <ion-button (click)="previous()" color="primary" fill="clear">
+              <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+              PRÉCEDENT
+            </ion-button>
+            <ion-button (click)="next()" color="primary">
+              <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+              SUIVANT
+            </ion-button>
+          </ion-buttons>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <!-- Slide 3 -->
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-text>
+            <img src="./assets/slider/share.jpg" />
+            <h1 class="ion-padding">
+              Partagez votre position, <br />
+              ou celle d'une entreprise avec les autres...
+            </h1>
+          </ion-text>
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-padding">
+          <ion-buttons>
+            <ion-button (click)="previous()" color="primary" fill="clear">
+              <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+              PRÉCEDENT
+            </ion-button>
+            <ion-button (click)="next()" color="primary">
+              <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+              SUIVANT
+            </ion-button>
+          </ion-buttons>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <!-- Slide 4 -->
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-text>
+              <h1 class="ion-padding">Vous êtes une entreprise?</h1>
+              <img src="./assets/slider/enterprise.png" />
+              <p>Inscrivez-vous et</p>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding">
+          <ion-item>
+            <ion-icon name="checkbox-outline" color="secondary" slot="start"></ion-icon>
+            <ion-label>Augmentez votre visibilité,</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="checkbox-outline" color="secondary" slot="start"></ion-icon>
+            <ion-label>Partagez vos offres d'emploi,</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="checkbox-outline" color="secondary" slot="start"></ion-icon>
+            <ion-label class="text-wrapper"
+              >Publiez vos offres promotionnelles!</ion-label
+            >
+          </ion-item>
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-padding">
+          <ion-col size="12">
+            <ion-button class="start-btn" (click)="start()" expand="block">
+              <ion-icon slot="end"></ion-icon>
+              Commencer !
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

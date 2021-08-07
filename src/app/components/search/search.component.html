@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" fill="clear" color="primary">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="ion-padding">
+    <ion-title>Que recherchez-vous ?</ion-title>
+    <ion-searchbar
+      debounce="500"
+      color="light"
+      (ionChange)="search($event)"
+      placeholder="Entrez un mot clé ..."
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="filteredPartners.length > 0">
+          <ion-card class="partner-card" *ngFor="let item of filteredPartners" (click)="navigateToPartnerDetail(item.id)" >
+            <ion-row class="ion-padding-vertical">
+              <ion-col size="4" class="partner-img-container">
+                <ion-img class="partner-img" [src]="item.logo"></ion-img>
+              </ion-col>
+              <ion-col size="8" class="ion-no-padding">
+                <ion-text>
+                  <div *ngIf="item.featured">
+                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                  </div>
+                  <h4>{{item.name}}</h4>
+                  <ion-row class="ion-justify-content-between">
+                    <ion-item>
+                      <ion-icon name="business-outline" slot="start"></ion-icon>
+                      <ion-label class="partner-sector">{{item.businessSector?.name}}</ion-label>
+                    </ion-item>
+                  </ion-row>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+
+        <!--SHOW THE SKELETON TEXT -->
+        <ion-list *ngIf="showSkeleton">
+          <ion-item *ngFor="let d of [].constructor(5)">
+            <ion-thumbnail>
+             <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h4><ion-skeleton-text animated style="width: 60%;"></ion-skeleton-text></h4>
+              <ion-text>
+                <p><ion-skeleton-text animated style="width: 40%;"></ion-skeleton-text></p>
+              </ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+
+        <!-- NO ITEMS FOUND -->
+        <ion-list *ngIf="filteredPartners.length<= 0 && touched" lines="none">
+          <ion-item>
+            <ion-label>
+              <h3>Oups! Aucune entreprise ne correspond...</h3>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

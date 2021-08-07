@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="ion-padding-horizontal">
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        color="primary"
+        defaultHref="/home"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content appParallaxHeader [scrollEvents]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="ion-padding-vertical ion-padding">
+    <h1 class="item-name">Weurko by Dev'Olution LAB.</h1>
+  </div>
+
+  <div class="description ion-padding">
+    <h5>Weurko, c'est quoi ?</h5>
+    <p>
+      Weurko est un moteur de recherche de contacts et d'adresses des entreprises du Sénégal. <br><br>
+      Il permet aux touristes et à tout individu de trouver des informations sur leur position ou celle des entreprises, de trouver des offres d’emplois et de permettre aux entreprises de s’enregistrer et de partager leurs informations avec leurs clients et prospects.
+    </p>
+  </div>
+
+  <div class="ion-padding">
+    <ion-icon class="icon-about face" name="logo-facebook"></ion-icon>
+    <ion-icon class="icon-about twitt" name="logo-twitter"></ion-icon>
+    <ion-icon class="icon-about insta" name="logo-instagram"></ion-icon>
+    <ion-icon class="icon-about web" name="globe"></ion-icon>
+  </div>
+
+</ion-content>

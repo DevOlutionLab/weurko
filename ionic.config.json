@@ -1,0 +1,8 @@
+{
+  "name": "weurko-app",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

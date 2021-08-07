@@ -1,0 +1,44 @@
+ion-back-button::part(native) {
+  border: 1px solid var(--ion-color-light);
+  border-radius: 1rem;
+}
+
+.parallax-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+}
+
+.main {
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+
+  .partner-name {
+      font-size: 2rem;
+      font-weight: 800;
+  }
+  
+  .sector {
+      color: var(--ion-color-primary-tint);
+      margin-left: .25rem;
+      font-size: 1.3rem;
+  }
+
+  .review, .description, .sites {
+      margin: 3rem 0;
+  }
+
+  .address {
+    box-shadow: 0px 0.82em 1.875rem 0 rgba(0, 0, 0, 0.09);
+  }
+
+  .contact {
+    box-shadow: 0px 0.82em 1.875rem 0 rgba(0, 0, 0, 0.09);
+  }
+
+  .schedule {
+    box-shadow: 0px 0.82em 1.875rem 0 rgba(0, 0, 0, 0.09);
+  }
+}

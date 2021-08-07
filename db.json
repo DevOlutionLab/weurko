@@ -1,0 +1,315 @@
+{
+    "partners": [
+        {
+            "id": 1,
+            "name": "DevOlution Lab",
+            "businessSectorId": 1,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "logo": "./assets/logo/devolution.png",
+            "featured": true,
+            "businessSectorIn": {
+                "id": 1,
+                "name": "Technologies",
+                "image": "./assets/images/tech.jpg"
+    
+            }
+        },
+        {
+            "id": 2,
+            "name": "Wave",
+            "businessSectorId": 2,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "logo": "./assets/logo/wave.png",
+            "featured": true,
+            "businessSectorIn": {
+                "id": 2,
+                "name": "Fintech",
+                "image": "./assets/images/fintech.jpg"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Senelec",
+            "businessSectorId": 3,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "logo": "./assets/logo/senelec.png",
+            "featured": true,
+            "businessSectorIn": {
+                "id": 3,
+                "name": "Electricité",
+                "image": "./assets/images/electricity.jpg"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Free Mobile",
+            "businessSectorId": 4,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "logo": "./assets/logo/free.png",
+            "featured": true,
+            "businessSectorIn": {
+                "id": 4,
+                "name": "Opérateur",
+                "image": "./assets/images/provider.jpg"
+            }
+        },
+        {
+            "id": 5,
+            "name": "Les Grands Moulins de Dakar",
+            "businessSectorId": 5,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "logo": "./assets/logo/gmd.png",
+            "featured": true,
+            "businessSectorIn": {
+                "id": 5,
+                "name": "Industrie",
+                "image": "./assets/images/industry.jpg"
+            }
+        }
+    ],
+    "addresses": [
+        {
+            "id": 1,
+            "regionId": "Dakar",
+            "department": "string",
+            "district": "string",
+            "street": "string"
+        },
+        {
+            "id": 2,
+            "region": "Kolda",
+            "department": "string",
+            "district": "string",
+            "street": "string"
+        },
+        {
+            "id": 3,
+            "region": "Diourbel",
+            "department": "string",
+            "district": "string",
+            "street": "string"
+        },
+        {
+            "id": 4,
+            "region": "Fatick",
+            "department": "string",
+            "district": "string",
+            "street": "string"
+        },
+        {
+            "id": 5,
+            "region": "Kaffrine",
+            "department": "string",
+            "district": "string",
+            "street": "string"
+        }
+    ],
+    "regions": [
+        {
+            "id": 1,
+            "name": "Dakar"
+        },
+        {
+            "id": 2,
+            "name": "Diourbel"
+        },
+        {
+            "id": 3,
+            "name": "Fatick"
+        },
+        {
+            "id": 4,
+            "name": "Kaffrine"
+        },
+        {
+            "id": 5,
+            "name": "Kaolack"
+        },
+        {
+            "id": 6,
+            "name": "Kédougou"
+        },
+        {
+            "id": 7,
+            "name": "Kolda"
+        },
+        {
+            "id": 8,
+            "name": "Louga"
+        },
+        {
+            "id": 9,
+            "name": "Matam"
+        },
+        {
+            "id": 10,
+            "name": "Saint-Louis"
+        },
+        {
+            "id": 11,
+            "name": "Sédhiou"
+        },
+        {
+            "id": 12,
+            "name": "Tambacounda"
+        },
+        {
+            "id": 13,
+            "name": "Thiès"
+        },
+        {
+            "id": 14,
+            "name": "Ziguinchor"
+        }
+    ],
+    "sites": [
+        {
+            "id": 1,
+            "partnerId": 1,
+            "addressId": 1,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 2,
+            "partnerId": 2,
+            "addressId": 2,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 3,
+            "partnerId": 3,
+            "addressId": 3,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 4,
+            "partnerId": 4,
+            "addressId": 4,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 5,
+            "partnerId": 5,
+            "addressId": 5,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 6,
+            "partnerId": 1,
+            "addressId": 1,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 7,
+            "partnerId": 1,
+            "addressId": 2,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 8,
+            "partnerId": 2,
+            "addressId": 2,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 9,
+            "partnerId": 3,
+            "addressId": 3,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 10,
+            "partnerId": 4,
+            "addressId": 4,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 11,
+            "partnerId": 5,
+            "addressId": 5,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        },
+        {
+            "id": 12,
+            "partnerId": 1,
+            "addressId": 1,
+            "postalCode": "string",
+            "mobilePhone": "777777777",
+            "officePhone": "333333333",
+            "opensAt": "08:00",
+            "closesAt": "05:00"
+        }
+    ],
+    "businessSectors": [
+        {
+            "id": 1,
+            "name": "Technologies",
+            "image": "./assets/images/tech.jpg"
+
+        },
+        {
+            "id": 2,
+            "name": "Fintech",
+            "image": "./assets/images/fintech.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Electricité",
+            "image": "./assets/images/electricity.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Opérateur",
+            "image": "./assets/images/provider.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Industrie",
+            "image": "./assets/images/industry.jpg"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+ion-back-button::part(native) {
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
+ion-buttons.star-icon-container {
+    background: var(--ion-color-primary);
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.parallax-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+}
+
+.main {
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+
+    .partner-name {
+        font-size: 2rem;
+        font-weight: 800;
+    }
+    
+    .sector {
+        color: var(--ion-color-primary-tint);
+        margin-left: .25rem;
+        font-size: 1.3rem;
+    }
+
+    .review, .description, .sites {
+        margin: 3rem 0;
+    }
+
+    .description {
+        h5 {
+            font-size: 1.7rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+
+    .sites {
+        h5 {
+            font-size: 1.7rem;
+        }
+
+        ion-item {
+            margin: .7rem 0;
+            box-shadow: 0px 0.82em 1.875rem 0 rgba(0, 0, 0, 0.09);
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}

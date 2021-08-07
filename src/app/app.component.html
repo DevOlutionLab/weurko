@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-split-pane contentId="main-content" class="edupala-menu">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title class="mn-title">WEURKO</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <img src="./assets/icon/favicon.png"/>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-no-padding">
+        <ion-menu-toggle auto-hide="false" color>
+          <div class="main-list">
+            <ion-list id="inbox-list">
+  
+              <ion-menu-toggle auto-hide="false">
+                <ion-item lines="none" (click)="navigate('/home', 1)" detail="false" class="ion-text-center" [class.selected]="selectedIndex == 1">
+                  <ion-label>Accueil</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+              <ion-menu-toggle auto-hide="false">
+                <ion-item lines="none" (click)="navigate('/profile', 2)" detail="false" class="ion-text-center" [class.selected]="selectedIndex == 2">
+                  <ion-label>Profil</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+              <ion-menu-toggle auto-hide="false">
+                <ion-item lines="none" (click)="navigate('/partner', 3)" detail="false" class="ion-text-center" [class.selected]="selectedIndex == 3">
+                  <ion-label>Catégories</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+              <!-- <ion-menu-toggle auto-hide="false">
+                <ion-item lines="none" (click)="navigate('/settings', 4)" detail="false" class="ion-text-center" [class.selected]="selectedIndex == 4">
+                  <ion-label>Paramètres</ion-label>
+                </ion-item>
+              </ion-menu-toggle> -->
+              <ion-menu-toggle auto-hide="false">
+                <ion-item lines="none" (click)="navigate('/about', 5)" detail="false" class="ion-text-center" [class.selected]="selectedIndex == 5">
+                  <ion-label>A propos</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list>
+  
+            <!-- Close Button -->
+            <ion-button fill="clear" color="primary" (click)="close()">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-menu-toggle>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary">
+        <img src="../../assets/menu_bar.svg" />
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login" routerDirection="forward">
+        <ion-icon name="keypad" color="primary"></ion-icon>
+        <span>&nbsp;</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="ion-padding" [appScrollVanish]="scrollArea">
+    <ion-button class="search-btn" (click)="presentModal()" expand="block" fill="outline">
+      <ion-icon slot="end" name="search-outline"></ion-icon>
+      Trouver une entreprise...
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen #scrollArea
+scrollEvents="true">
+
+  <ng-container *ngIf="partners; else elseTemplate" >
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  
+    <div class="section-title ion-padding">
+      <h4>En vedette</h4>
+      <ion-button fill="clear" routerLink="/partner">Voir tout</ion-button>
+    </div>
+  
+    <div class="location-slider ion-padding-start">
+      <ion-slides [options]="sliderOptions">
+        <ion-slide *ngFor="let partner of partners">
+          <ion-col class="ion-text-left" routerLink="/partner-detail/{{partner.id}}" routerDirection="forward">
+            <ion-img src="{{ partner.logo }}"></ion-img>
+            <h6>{{ partner.name.length > 20 ? (partner.name | slice:0:20)+"..." : partner.name }}</h6>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div class="section-title ion-padding">
+      <h4>Plus vues</h4>
+      <ion-button fill="clear" routerLink="/partner">Voir tout</ion-button>
+    </div>
+  
+    <div class="location-slider ion-padding-start">
+      <ion-slides [options]="sliderOptions">
+        <ion-slide *ngFor="let partner of partners">
+          <ion-col class="ion-text-left" routerLink="/partner-detail/{{partner.id}}" routerDirection="forward">
+            <ion-img src="{{ partner.logo }}"></ion-img>
+            <h6>{{ partner.name }}</h6>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ng-container>  
+
+  <ng-template #elseTemplate>
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text
+          animated
+          style="width: 27px; height: 27px"
+          slot="start"
+        ></ion-skeleton-text>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-content>

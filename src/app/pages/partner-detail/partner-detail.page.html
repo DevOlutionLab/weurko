@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar class="ion-padding-horizontal">
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        color="primary"
+        defaultHref="/home"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="partner" appParallaxHeader [scrollEvents]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div
+    class="parallax-image"
+    [style.background-image]="'url(' + partner.logo + ')'"
+  ></div>
+
+  <div class="main ion-padding">
+    <ion-text>
+      <h1 class="partner-name">{{partner.name}}</h1>
+      <h3 class="sector">{{partner.businessSectorIn.name}}</h3>
+    </ion-text>
+
+    <div class="review">
+      <ion-row class="ion-justify-content-between">
+        <ion-text>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-label>4.5</ion-label>
+        </ion-text>
+        <ion-text>
+          <ion-label>16 Avis</ion-label>
+        </ion-text>
+      </ion-row>
+    </div>
+
+    <div class="description">
+      <h5>Description</h5>
+      <p>
+        {{showMore ? partner.description : partner.description | slice:0:200}}
+        <span *ngIf="!showMore">...</span>
+        <a href="javascript:;" *ngIf="!showMore" (click)="showMore=true"
+          >[voir plus]</a
+        >
+      </p>
+    </div>
+
+    <div class="sites">
+      <h5>Sites {{partner.name}} </h5>
+      <ion-list *ngIf="sites" >
+        <ion-item *ngFor="let site of sites" routerLink="/site-detail/{{site.id}}">
+          <ion-thumbnail slot="start">
+            <img [src]="partner.logo">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>
+              <ion-icon name="location-outline"></ion-icon>
+              {{site.address.department}}, {{site.address.region }}
+            </h2>
+            <p>
+              <ion-icon name="call-outline"></ion-icon>
+              {{site.officePhone}}
+            </p>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button fill="clear" color="primary">
+              <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>

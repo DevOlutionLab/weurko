@@ -1,0 +1,107 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="top-toolbar ion-padding-start">
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        defaultHref="/home"
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar
+    class="search-toolbar ion-padding"
+    [appScrollVanish]="scrollArea"
+  >
+    <ion-searchbar
+      showCancelButton="focus"
+      cancelButtonText="annuler"
+      enterkeyhint="search"
+      animated
+      placeholder="Rechercher une entreprise..."
+      [(ngModel)]="filterTerm"
+    ></ion-searchbar>
+  </ion-toolbar>
+
+  <ion-toolbar class="sectors-toolbar ion-padding-top">
+    <ion-slides [options]="opts" *ngIf="businessSectors">
+      <ion-slide *ngFor="let sector of businessSectors; let i = index">
+        <ion-button
+          fill="clear"
+          shape="round"
+          [class.active-sector]="activeSector === i"
+          (click)="selectSector(i)"
+        >
+          {{sector.name}}
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  fullscreen
+  class="ion-padding"
+  (ionScroll)="onScroll($event)"
+  scrollEvents="true"
+  #scrollArea
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngFor="let entry of entries | filter:filterTerm">
+    <ion-list-header
+      [style.background-image]="'linear-gradient(rgb(34 35 41 / 10%), rgb(34 35 41 / 80%)), url(' + entry.image +')'"
+    >
+      <ion-text color="light">
+        <h1>{{entry.name}}</h1>
+      </ion-text>
+    </ion-list-header>
+
+    <ng-container *ngIf="entry.partners.length > 0; else elseTemplate">
+      <ion-row *ngFor="let partner of entry.partners">
+        <ion-col size="12">
+          <ion-card
+            class="partner-card"
+            *ngFor="let item of entry.partners"
+            routerLink="/partner-detail/{{item.id}}"
+          >
+            <ion-row class="ion-padding-vertical">
+              <ion-col size="4" class="partner-img-container">
+                <ion-img class="partner-img" [src]="item.logo"></ion-img>
+              </ion-col>
+              <ion-col size="8" class="ion-no-padding">
+                <ion-text>
+                  <div *ngIf="item.featured">
+                    <ion-icon
+                      size="medium"
+                      color="primary"
+                      name="trophy"
+                    ></ion-icon>
+                  </div>
+                  <h4>{{item.name}}</h4>
+                  <ion-row class="ion-justify-content-between">
+                    <ion-item>
+                      <ion-icon name="business-outline" slot="start"></ion-icon>
+                      <ion-label class="partner-sector"
+                        >{{item.businessSectorIn.name}}</ion-label
+                      >
+                    </ion-item>
+                  </ion-row>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <ion-row>
+        <ion-text>
+          <h1>Available soon</h1>
+        </ion-text>
+      </ion-row>
+    </ng-template>
+  </ion-list>
+</ion-content>
